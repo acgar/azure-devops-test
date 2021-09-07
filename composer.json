@@ -1,0 +1,11 @@
+{
+    "name": "acgar/azure-devops-test",
+    "description": "Testing azure pipelines",
+    "autoload": {
+        "psr-4": {"Acgar\\AzureDevops\\": "src/"}
+    },
+    "require": {
+        "php": ">=7.4",
+        "phpunit/phpunit": "^9.5"
+    }
+}
