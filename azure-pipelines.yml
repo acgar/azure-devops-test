@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'Ubuntu-20.04'
 
 variables:
   phpVersion: 7.2
@@ -15,3 +15,5 @@ variables:
 steps:
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
+- script: phpunit test/
+  displayName: 'running phpunit'
