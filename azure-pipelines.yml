@@ -15,5 +15,5 @@ variables:
 steps:
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
-- script: phpunit test/
+- script: ./vendor/bin/phpunit test/
   displayName: 'running phpunit'
