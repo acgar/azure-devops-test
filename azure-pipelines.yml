@@ -15,5 +15,11 @@ variables:
 steps:
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
-- script: ./vendor/bin/phpunit test/
+
+- script: ./vendor/bin/phpunit test/ --log-junit results.xml
   displayName: 'running phpunit'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'results.xml'
+    testRunTitle: 'Unit tests output'
