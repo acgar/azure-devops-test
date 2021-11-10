@@ -18,8 +18,17 @@ steps:
 
 - script: ./vendor/bin/phpunit test/ --log-junit results.xml
   displayName: 'running phpunit'
-- task: PublishTestResults@2
+
+- task: DockerCompose@0
   inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: 'results.xml'
-    testRunTitle: 'Unit tests output'
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'run app'
+    arguments: 'php /usr/app/vendor/bin/phpunit /usr/app/test'
+
+#- task: PublishTestResults@2
+#  inputs:
+#    testResultsFormat: 'JUnit'
+#    testResultsFiles: 'results.xml'
+#    testRunTitle: 'Unit tests output'
