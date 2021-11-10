@@ -1,0 +1,16 @@
+app:
+  build: docker/app
+  container_name: app
+  volumes:
+    - ./:/usr/app
+  links:
+    - sqlsrv
+
+sqlsrv:
+  build: docker/sqlsrv
+  container_name: test_db
+  ports:
+    - "1433:1433"
+  environment:
+    - ACCEPT_EULA=Y
+    - SA_PASSWORD=jgRt64Slkjdfpoahk0121
