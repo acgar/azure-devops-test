@@ -32,10 +32,10 @@ steps:
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'run app'
-    arguments: 'php /usr/app/vendor/bin/phpunit /usr/app/test'
+    arguments: 'php /usr/app/vendor/bin/phpunit /usr/app/test --log-junit /usr/app/results.xml'
 
-#- task: PublishTestResults@2
-#  inputs:
-#    testResultsFormat: 'JUnit'
-#    testResultsFiles: 'results.xml'
-#    testRunTitle: 'Unit tests output'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'results.xml'
+    testRunTitle: 'Unit tests output'
