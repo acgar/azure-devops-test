@@ -2,10 +2,14 @@
     "name": "acgar/azure-devops-test",
     "description": "Testing azure pipelines",
     "autoload": {
-        "psr-4": {"Acgar\\AzureDevops\\": "src/"}
+        "psr-4": {
+            "Acgar\\AzureDevops\\": "src/",
+            "Acgar\\AzureDevops\\Test\\": "test/"
+        }
     },
     "require": {
         "php": ">=7.4",
+        "ext-sqlsrv": "*",
         "phpunit/phpunit": "^9.5"
     }
 }

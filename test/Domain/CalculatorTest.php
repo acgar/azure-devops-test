@@ -1,4 +1,5 @@
 <?php
+namespace Acgar\AzureDevops\Test\Domain;
 
 use Acgar\AzureDevops\Domain\Calculator;
 use PHPUnit\Framework\TestCase;
