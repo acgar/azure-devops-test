@@ -25,5 +25,6 @@ class Calculator
     {
         return $a - $b;
     }
+    // new comment...
 
 }
